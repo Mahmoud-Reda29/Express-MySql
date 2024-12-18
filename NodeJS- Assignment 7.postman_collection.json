@@ -1,0 +1,370 @@
+{
+	"info": {
+		"_postman_id": "afb49a72-2cbe-4f52-bc39-7ef0c0348c2f",
+		"name": "NodeJS: Assignment 7",
+		"description": "# 🚀 Get started here\n\nThis template guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.\n\n## 🔖 **How to use this template**\n\n#### **Step 1: Send requests**\n\nRESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.\n\nThis collection contains each of these [request](https://learning.postman.com/docs/sending-requests/requests/) types. Open each request and click \"Send\" to see what happens.\n\n#### **Step 2: View responses**\n\nObserve the response tab for status code (200 OK), response time, and size.\n\n#### **Step 3: Send new Body data**\n\nUpdate or add new data in \"Body\" in the POST request. Typically, Body data is also used in PUT request.\n\n```\n{\n    \"name\": \"Add your name in the body\"\n}\n\n ```\n\n## 💡Related templates\n\n[API testing basics](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9a37a28-055b-49cd-8c7e-97494a21eb54&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[API documentation](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9c28f47-1253-44af-a2f3-20dce4da1f18&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[Authorization methods](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=31a9a6ed-4cdf-4ced-984c-d12c9aec1c27&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37529607",
+		"_collection_link": "https://speeding-robot-297934.postman.co/workspace/My-Workspace~33d9cbab-7eee-4a68-8b6d-84e2b62ca6c6/collection/37529607-afb49a72-2cbe-4f52-bc39-7ef0c0348c2f?action=share&source=collection_link&creator=37529607"
+	},
+	"item": [
+		{
+			"name": "DB",
+			"item": [
+				{
+					"name": "TablesCreation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/DB/create-tables",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"DB",
+								"create-tables"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "this folder contains post request for creating user,products tables in database"
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"Mahmoud\",\r\n    \"lastName\":\"Reda\",\r\n    \"phone\":\"01066112250\",\r\n    \"email\":\"sim.mahmoud.reda29@gmail.com\",\r\n    \"role\":\"admin\",\r\n    \"password\":\"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/signup",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sigin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"sim.mahmoud.reda@gmail.com\",\r\n    \"password\":\"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AlterTable",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/alter-table",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"alter-table"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TruncateTable",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/truncate-table",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"truncate-table"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "this Folder Contains Endpoints for CRUD Operations of User Entity in Our application"
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "AddProduct",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"iphone 12\",\r\n    \"price\":20000,\r\n    \"stock\":20,\r\n    \"user_id\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/products/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ProductSoftDelete",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/soft-delete/3",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"soft-delete",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteProduct",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/4",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SearchProduct",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/search?name=iphone",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"search"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "iphone"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SearchProudctInIDs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/in?ids=1,3",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"in"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "1,3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllProductsNotDeleted",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetProductsWithUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/products-with-users",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"products-with-users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ProductMaxPrice",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/max-price",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"max-price"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Top5ExpensiveProducts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/top-expensive",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"top-expensive"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "this folder Contains Endpoints for Products Entity in Application"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": "1"
+		},
+		{
+			"key": "base_url",
+			"value": "http://localhost:3000"
+		}
+	]
+}
